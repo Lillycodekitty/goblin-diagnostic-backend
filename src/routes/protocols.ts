@@ -37,14 +37,19 @@ Return a JSON object with:
 - advice (short encouraging note)
 `;
 
-    const response = await openai.responses.create({
+    const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
-      input: prompt,
-      max_output_tokens: 250,
-      temperature: 0.85
+      messages: [
+        {
+          role: 'user',
+          content: prompt
+        }
+      ],
+      temperature: 0.85,
+      max_tokens: 250
     });
 
-    const outputText = response.output[0]?.content[0]?.text || '';
+    const outputText = response.choices[0]?.message?.content || '';
     let result;
 
     try {
