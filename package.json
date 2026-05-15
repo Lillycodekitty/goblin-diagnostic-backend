@@ -1,0 +1,43 @@
+{
+  "name": "goblin-diagnostic-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Goblin Diagnostic Center with AI-generated protocols",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:seed": "tsx src/db/seed.ts",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "goblin",
+    "api",
+    "diagnostic",
+    "openai"
+  ],
+  "author": "Lillycodekitty",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.10.9",
+    "@types/supertest": "^2.0.14",
+    "supertest": "^7.2.2",
+    "tsx": "^3.5.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "openai": "^4.28.0",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
+  }
+}
